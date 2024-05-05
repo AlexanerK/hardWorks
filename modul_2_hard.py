@@ -14,7 +14,7 @@ while 1 > 0:
             for j in range(1, 21):
                 if n % (i + j) == 0 and (i + j) <= n and i != j and i < j:
                     rezult.extend((i, j))
+        print(*rezult)
     else:
         print("Некорректный ввод, пожалуйста введите число от 3 до 20")
-    print(*rezult)
     rezult = []
