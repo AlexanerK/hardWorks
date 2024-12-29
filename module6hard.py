@@ -13,6 +13,7 @@ class Figure:
                 self.__sides = self.__sides * self.sides_count
             else:
                 self.__sides = [1] * self.sides_count
+                return self.__sides
         self.__color = color
         self.filled = filled
 
@@ -51,9 +52,9 @@ class Figure:
 
     def __len__(self):
         perimetr = 0
-        for i in range(len(self.__sides)):
-            perimetr += self.__sides[i]
-            return perimetr
+        for i in self.__sides:
+            perimetr += i
+        return perimetr
 
     def set_sides(self, *new_sides):
         self.new_sides = [*new_sides]
@@ -87,9 +88,8 @@ class Cube(Figure):
     sides_count = 12
     volume = 0
     def get_volume(self):
-        for i in range(len(self._Figure__sides)):
-            volume = self._Figure__sides[0] ** 3
-            return volume
+        volume = self._Figure__sides[0] ** 3
+        return volume
 
 
 
